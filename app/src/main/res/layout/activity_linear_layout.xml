@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LinearLayoutActivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LinearLayoutActivity">
+
+        <View
+            android:id="@+id/redBlock"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#ff0000"/>
+
+        <View
+            android:id="@+id/greenBlock"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#00ff00"/>
+
+        <View
+            android:id="@+id/blueBlock"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#0000ff"/>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/redCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red"
+        android:checked="true"
+        android:layout_margin="32dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/greenCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green"
+        android:checked="true"
+        android:layout_margin="32dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/redCheckBox"
+        app:layout_constraintEnd_toStartOf="@id/blueCheckBox"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/blueCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue"
+        android:checked="true"
+        android:layout_margin="32dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
