@@ -7,29 +7,34 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+/**
+ * Here, we will see the usage of a Linear Layout, play with the application by toggling the
+ * checkbox values and see the behaviour of the view-group layout.
+ */
 public class LinearLayoutActivity extends AppCompatActivity {
 
     private View redBlock;
-    private View greenBlock;
-    private View blueBlock;
 
-    private CheckBox redCheckBox;
-    private CheckBox greenCheckBox;
-    private CheckBox blueCheckBox;
+    private View greenBlock;
+
+    private View blueBlock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_layout);
 
+        // Initializing the colored blocks
         redBlock = findViewById(R.id.redBlock);
         greenBlock = findViewById(R.id.greenBlock);
         blueBlock = findViewById(R.id.blueBlock);
 
-        redCheckBox = findViewById(R.id.redCheckBox);
-        greenCheckBox = findViewById(R.id.greenCheckBox);
-        blueCheckBox = findViewById(R.id.blueCheckBox);
+        // Initializing the checkboxes
+        CheckBox redCheckBox = findViewById(R.id.redCheckBox);
+        CheckBox greenCheckBox = findViewById(R.id.greenCheckBox);
+        CheckBox blueCheckBox = findViewById(R.id.blueCheckBox);
 
+        // Set a listener to get updates of the checkbox
         redCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
@@ -41,6 +46,7 @@ public class LinearLayoutActivity extends AppCompatActivity {
             }
         });
 
+        // Set a listener to get updates of the checkbox
         greenCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
@@ -52,6 +58,7 @@ public class LinearLayoutActivity extends AppCompatActivity {
             }
         });
 
+        // Set a listener to get updates of the checkbox
         blueCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
